@@ -1,120 +1,80 @@
 # OCIFoundationsRevGuide
 Oracle 1Z0-1085 revision guide
 
-# 📚 OCI Foundations Associate (1Z0-1085) Ultimate Revision Sheet
+# 📚 OCI Foundations Associate (1Z0-1085) Full Study Sheet
 
 ---
 
 ## ☁️ Cloud Basics
-- **IaaS:** Infrastructure as a Service (VMs, storage, network)
-- **PaaS:** Platform as a Service (databases, app platforms)
-- **SaaS:** Software as a Service (apps like Gmail, ERP systems)
 
-- **Benefits of Cloud:** Scalability, Cost efficiency, High availability, Global reach, Security
+### Cloud Models:
+- **IaaS:** Infrastructure (Compute, Storage, Network)
+- **PaaS:** Platform (Database, App Development)
+- **SaaS:** Software (Gmail, ERP apps)
+
+### Cloud Benefits:
+- Scalability
+- Cost efficiency
+- Global reach
+- High availability
+- Improved security
 
 ---
 
 ## 🌍 Regions, Availability Domains, and Fault Domains
-- **Region:** A geographic area (e.g., London, Tokyo)
-- **Availability Domain (AD):** A fault-isolated data center within a region
-- **Fault Domain:** Logical group inside an AD to spread resources for high availability
 
-> ✅ Region > Availability Domain > Fault Domain
+### Definitions:
+- **Region:** A geographic area (e.g., London, Phoenix).
+- **Availability Domain (AD):** Independent data center within a region.
+- **Fault Domain:** Logical grouping inside an AD for failure protection.
+
+✅ **Structure:** Region > Availability Domain > Fault Domain
 
 ---
 
 ## 🖥️ Compute
-- **Instance:** A virtual machine (VM) or bare metal server
-- **Shape:** Defines CPU, memory, bandwidth, and storage (e.g., `VM.Standard.E4.Flex`)
-- **Flexible Shapes:** Customize CPU and memory
-- **Block Volume:** Persistent storage attached to instances
-- **Local NVMe:** Fast temporary storage, lost when instance stops
-- **Instance Configuration:** Combination of shape + base image + metadata (template for new instances)
+
+### Core Concepts:
+- **Instance:** A virtual server (VM or Bare Metal).
+- **Shape:** Defines CPU, memory, bandwidth, storage.
+- **Flexible Shape:** Customize CPUs and RAM.
+- **Block Volume:** Persistent storage attached to instances.
+- **Local NVMe:** Temporary ultra-fast storage (lost when instance stops).
+
+### Instance Configuration:
+- A saved template of Shape + Image + Metadata.
 
 ---
 
 ## 📂 Compartments
-- Logical folders to **organize and isolate** resources.
-- Policies are attached **at the compartment level**.
-- **Gl**
 
+### Key Points:
+- Logical containers for organizing resources.
+- IAM Policies are applied at the compartment level.
+- Compartments are **global** across regions.
+- Resources can be moved between compartments (with some limits).
 
----
-
-## 🌐 Networking (VCN - Virtual Cloud Network)
-- **VCN:** Private cloud network (like your own data center)
-- **Subnet:** Subdivision of a VCN (public or private)
-- **Routing Table:** Defines where traffic goes
-- **Internet Gateway:** Public internet access (inbound and outbound)
-- **NAT Gateway:** Outbound-only internet access for private instances
-- **Service Gateway:** Private access to OCI services (like Object Storage) without public internet
-- **Dynamic Routing Gateway (DRG):** Connects VCN to on-premises or other VCNs
-
-> ✅ Routing Table = Traffic directions  
-> ✅ Security List / NSG = Traffic permission
+✅ **Compartments = Logical Folders for Resources**
 
 ---
 
-## 🗄️ Storage
-- **Block Volume:** Persistent storage like a hard drive
-- **Object Storage:** Store unstructured data (files, images)
-- **Archive Storage:** Very cheap, for rarely accessed "cold" data
-- **File Storage:** Shared file system using **NFS** protocol
+## 🔐 Security
 
----
+### Core IAM Concepts:
+- **Users:** Human accounts.
+- **Groups:** Collections of users.
+- **Policies:** Define what groups can do.
+- **Dynamic Groups:** Automatically group cloud resources (e.g., instances).
 
-## 🔥 Load Balancing
-- **Load Balancer (LB):** 
-  - Layer 7 (Application layer)
-  - HTTP/HTTPS traffic
-  - SSL termination, smart routing
-- **Network Load Balancer (NLB):**
-  - Layer 4 (Transport layer)
-  - TCP/UDP traffic
-  - High performance, low latency
+### Security Controls:
+- **Security Lists:** Subnet-level firewall rules.
+- **Network Security Groups (NSGs):** Resource-level firewall rules.
+- **Security Zones:** Enforced strong security policies at the compartment level.
 
-> ✅ LB = Smart  
-> ✅ NLB = Fast
+✅ **Encryption:** Always enabled at rest and in transit.
 
----
+### IAM Policy Structure:
 
-## 🔄 Scaling
-- **Autoscaling:** Automatically adds/removes compute instances based on metrics.
-- **Horizontal Scaling:** Add more instances (scale out/in).
-- **Vertical Scaling:** Make an instance bigger (scale up/down) by changing shape.
-
-> ✅ Autoscaling = Cloud grows/shrinks servers automatically.
-
----
-
-## 💵 Pricing and Billing
-- **Cost Analysis:** Visualize cloud spending (graphs and reports)
-- **Budgets:** Set spending limits and receive alerts
-- **Free Tier:** 
-  - Always Free services (Compute, Block Volume, Autonomous Database, Object Storage)
-
-> ✅ Inbound data transfer = Free  
-> ✅ Outbound data transfer = Charged (after free tier)
-
----
-
-## 📈 Monitoring, Notifications, and Logging
-- **Monitoring:** Collects metrics like CPU usage and storage capacity
-- **Notifications:** Sends alerts when conditions are met
-- **Audit Logs:** Records all user and system activity
-
----
-
-## 🛡️ Web Protection
-- **Web Application Firewall (WAF):** Protects web apps from attacks (e.g., SQL injection, XSS)
-- **DDoS Protection:** Included by default
-
----
-
-## 🧠 Governance and Compliance
-- **Tagging:** Organize resources and track costs
-- **Quotas:** Control resource usage limits
-- **Budgets:** Set spending thresholds
 
 ---
 
